@@ -18,11 +18,15 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         Employee JohnBollocks = new Employee("John", "Bollocks", "Manager", 24, 13821.78);
+        Money account = new Money(500000, 12352, 9836);
+
         JohnBollocks.printSalary();
         JohnBollocks.printAge();
         JohnBollocks.printName();
         JohnBollocks.printSurname();
         JohnBollocks.printRole();
+
+        //System.out.println(JohnBollocks.salary);
 
         JohnBollocks.setSalary(25000.212);
         JohnBollocks.printSalary();

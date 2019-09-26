@@ -10,4 +10,8 @@ public class Definitions {
     public double undefinedDouble = -1.0;
     public int undefinedInt = -1;
     public char undefinedChar = '*';
+
+    public void printText(){
+        System.out.println("New text!");
+    }
 }
