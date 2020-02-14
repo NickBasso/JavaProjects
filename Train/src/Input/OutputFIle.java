@@ -1,4 +1,4 @@
-package com.base;
+package Input;
 
 public class OutputFIle {
 }

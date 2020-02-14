@@ -1,19 +1,41 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Main{
-    public static void main(String args[]){
-        Scanner in = new Scanner(System.in);
+    public static void main(String args[]) throws Exception{
+        File file = new File("D:\\!Works\\Java\\_JavaProjects_GitHub\\CodeForces\\src\\input");
+        Scanner in = new Scanner(file);
 
-        int num = in.nextInt();
-        int times = in.nextInt();
+        int n, k, i, j;
 
-        while(times > 0){
-            if(num % 10 > 0) {num--;}
-            else {num /= 10;}
+        n = in.nextInt();
+        k = in.nextInt();
 
-            times--;
+        String s = in.next();
+        int[][] cc = new int['z' + 1][4 * 10^5 + 1];   // cc - count char
+        int[] ci = new int['z' + 1];
+
+        for(i = 0; i < s.length(); i++){
+            cc[s.charAt(i)][ci[s.charAt(i)]] = i;
+            ci[s.charAt(i)]++;
         }
 
-        System.out.print(num);
+        while()
+
+
     }
 }
+
+/*
+
+
+    256 MB = 256 * 1024 * 1024 B = ‭268,435,456‬ B
+    ‭268,435,456‬ B = ‭67,108,864‬ ints
+    ‭67,108,864‬ = 67 * 10^6
+
+    4 * 10^5 + 1 = 4 * 100000 + 1 = 400001
+    123 * 400001 = ‭49,200,123‬
+
+    Save indices of all character occurences
+    [123][4 * 10^5 + 1]                                       123 = 'z' + 1;
+ */

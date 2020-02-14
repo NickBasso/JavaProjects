@@ -20,6 +20,9 @@
   </component>
   <component name="ProjectId" id="1XBA3GoR6wF7zmQ6GxG2RDOIfle" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -64,10 +67,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="TrooperLines.get(j).x" />
+        <watch expression="TrooperLines.get(j).y" />
+        <watch expression="x" />
+        <watch expression="y" />
+        <watch expression="TrooperLines" />
+        <watch expression="Troopers.get(j).isAlive" />
+        <watch expression="Troopers" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
