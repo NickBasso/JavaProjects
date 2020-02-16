@@ -9,7 +9,7 @@ public class Sortings {
     // then call the sorting fuction
 
     public void QuickSort() throws Exception{
-        File file = new File("D:\\!Works\\Java\\_JavaProjects_GitHub\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\com\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
@@ -26,7 +26,7 @@ public class Sortings {
     }
 
     public void MergeSort() throws Exception{
-        File file = new File("D:\\!Works\\Java\\_JavaProjects_GitHub\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\com\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
@@ -37,6 +37,57 @@ public class Sortings {
 
         MergeSort_TopDown ob = new MergeSort_TopDown();
         ob.mergeSort(arr, 0, n-1);
+
+        ob.printArray(arr);
+        System.out.println("sorted array");
+    }
+
+    public void CountingSort() throws Exception{
+        File file = new File("..\\Train\\src\\com\\base\\input");
+        Scanner in = new Scanner(file);
+
+        int n = in.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++)
+            arr[i] = in.nextInt();
+
+        CountingSort ob = new CountingSort();
+        ob.sort(arr);
+
+        ob.printArray(arr);
+        System.out.println("sorted array");
+    }
+
+    public void RadixSort() throws Exception{
+        File file = new File("..\\Train\\src\\com\\base\\input");
+        Scanner in = new Scanner(file);
+
+        int n = in.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++)
+            arr[i] = in.nextInt();
+
+        RadixSort ob = new RadixSort();
+        ob.radixsort(arr, n);
+
+        ob.printArray(arr);
+        System.out.println("sorted array");
+    }
+
+    public void HeapSort() throws Exception{
+        File file = new File("..\\Train\\src\\com\\base\\input");
+        Scanner in = new Scanner(file);
+
+        int n = in.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++)
+            arr[i] = in.nextInt();
+
+        HeapSort ob = new HeapSort();
+        ob.sort(arr);
 
         ob.printArray(arr);
         System.out.println("sorted array");

@@ -1,0 +1,39 @@
+//package base;
+
+import java.lang.reflect.Array;
+import java.util.*;
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception{
+	    //File file = new File("src/base/input.txt");
+	    Scanner in = new Scanner(System.in);
+
+	    int n = in.nextInt();
+
+	    int i, j, t, ans, sum;
+		int[] a = new int[111];
+
+		for(i = 0; i < n; i++){
+			t = in.nextInt();
+			ans = sum = 0;
+
+			for(j = 0; j < t; j++){
+				a[j] = in.nextInt();
+
+				if(a[j] == 0){
+					a[j]++;
+					ans++;
+				}
+
+				sum += a[j];
+			}
+
+			if(sum != 0)
+				System.out.println(ans);
+			else
+				System.out.println(ans + 1);
+		}
+    }
+}

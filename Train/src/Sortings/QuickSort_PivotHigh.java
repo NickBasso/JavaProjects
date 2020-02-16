@@ -57,7 +57,7 @@ public class QuickSort_PivotHigh
 
     public void printArray(int arr[])
     {
-        System.out.print("Merge sort: ");
+        System.out.print("Quick sort: ");
         int n = arr.length;
         for (int i=0; i<n; ++i)
             System.out.print(arr[i]+" ");
