@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c40911b4-a601-43a3-b554-9bcad84948ee" name="Default Changelist" comment="GitUPD">
-      <change beforePath="$PROJECT_DIR$/../CodeForces/Competition/src/Solutions/B.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CodeForces/Competition/src/Solutions/B.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CodeForces/Competition/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CodeForces/Competition/src/base/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="c40911b4-a601-43a3-b554-9bcad84948ee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582383520168</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GitUPD">
+      <created>1582383708318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582383708318</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
