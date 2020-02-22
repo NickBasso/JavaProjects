@@ -1,32 +1,14 @@
-//package base;
+package base;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) throws Exception{
-	    //File file = new File("src/base/input.txt");
-	    Scanner in = new Scanner(System.in);
+	    File file = new File("src/base/input.txt");
+	    Scanner in = new Scanner(file);
 
-	    int n = in.nextInt();
 
-	    int i, j, t, x1, x2;
-		int[] a = new int[200010];
-
-		for(i = 0; i < n; i++){
-			t = in.nextInt() * 2;
-
-			for(j = 0; j < t; j++)
-				a[j] = in.nextInt();
-
-			Arrays.sort(a, 0, t);
-
-			x1 = a[t / 2];
-			x2 = a[t / 2 - 1];
-
-			System.out.println(Math.abs(x1 - x2));
-		}
     }
 }

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c40911b4-a601-43a3-b554-9bcad84948ee" name="Default Changelist" comment="" />
+    <list default="true" id="c40911b4-a601-43a3-b554-9bcad84948ee" name="Default Changelist" comment="GitUPD">
+      <change beforePath="$PROJECT_DIR$/../CodeForces/Competition/src/Solutions/B.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CodeForces/Competition/src/Solutions/B.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CodeForces/Competition/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CodeForces/Competition/src/base/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +83,14 @@
       <option name="presentableId" value="Default" />
       <updated>1580055532934</updated>
     </task>
+    <task id="LOCAL-00001" summary="GitUPD">
+      <created>1582383520168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582383520168</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +105,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="GitUPD" />
+    <option name="LAST_COMMIT_MESSAGE" value="GitUPD" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Train$Main.ic" NAME="Main Coverage Results" MODIFIED="1580059570295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
