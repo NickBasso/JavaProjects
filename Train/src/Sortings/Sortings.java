@@ -1,7 +1,6 @@
 package Sortings;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Sortings {
@@ -9,7 +8,7 @@ public class Sortings {
     // then call the sorting fuction
 
     public void QuickSort() throws Exception{
-        File file = new File("..\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
@@ -26,7 +25,7 @@ public class Sortings {
     }
 
     public void MergeSort() throws Exception{
-        File file = new File("..\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
@@ -43,7 +42,7 @@ public class Sortings {
     }
 
     public void CountingSort() throws Exception{
-        File file = new File("..\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
@@ -60,7 +59,7 @@ public class Sortings {
     }
 
     public void RadixSort() throws Exception{
-        File file = new File("..\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
@@ -77,7 +76,7 @@ public class Sortings {
     }
 
     public void HeapSort() throws Exception{
-        File file = new File("..\\Train\\src\\com\\base\\input");
+        File file = new File("..\\Train\\src\\base\\input");
         Scanner in = new Scanner(file);
 
         int n = in.nextInt();
