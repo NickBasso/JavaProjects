@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Algorithms/Graphs/prim-fibonacci-heap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Algorithms/Graphs/prim_fibonacci_heap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Algorithms/prim-fibonacci-heap" vcs="Git" />
   </component>
 </project>
