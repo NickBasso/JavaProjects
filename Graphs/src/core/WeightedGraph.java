@@ -4,7 +4,7 @@ import java.util.*;
 
 public class WeightedGraph {
 
-    class Vertex{
+    static class Vertex{
         int index;
         String name;
 
@@ -14,13 +14,15 @@ public class WeightedGraph {
         }
     }
 
-    class Edge{
-        int from;
-        int to;
+    static class Edge{
+        String from;
+        String to;
+        long weight;
 
-        public Edge(int from, int to){
+        public Edge(String from, String to, long weight){
             this.from = from;
             this.to = to;
+            this.weight = weight;
         }
     }
 
@@ -28,17 +30,19 @@ public class WeightedGraph {
     public final long MAX = Long.MAX_VALUE;
     public final long MIN = Long.MIN_VALUE;
 
-    public int vertices = 0;
-    public int edges = 0;
+    public int vertices;
+    public int edges;
 
     public ArrayList<Vertex> Vertices = new ArrayList<Vertex>();
-    public ArrayList<Long> Edges = new ArrayList<Long>();
+    public ArrayList<Edge> Edges = new ArrayList<Edge>();
     public ArrayList<Vertex> Centers = new ArrayList<Vertex>();
 
     public long radius = MAX;
     public long diameter = MIN;
 
     public WeightedGraph(){
+        this.vertices = 0;
+        this.edges = 0;
     }
 
     public void drive(int vertices, int edges){

@@ -12,30 +12,175 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
+    // Create node
     public Button CreateNodeButton;
     public Button AddNodeButton;
     public TextField NodeNameTextField;
     public TextField NodeWeightTextField;
 
+    // Create edge
+    public Button CreateEdgeButton;
+    public Button AddEdgeButton;
+    public TextField EdgeOneNameTextField;
+    public TextField EdgeTwoNameTextField;
+    public TextField EdgeWeightTextField;
 
+    // Initialize graph
+    WeightedGraph graph = new WeightedGraph();
+
+    // Start application initial settings
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        CreateNodeButton.setVisible(true);
 
+        // create node init
+        CreateNodeButton.setVisible(true);
         NodeNameTextField.setDisable(true);
         NodeNameTextField.setText("");
-
-        NodeWeightTextField.setDisable(true);
-        NodeWeightTextField.setText("");
-
         AddNodeButton.setVisible(true);
         AddNodeButton.setDisable(true);
 
+        // create edge init
+        CreateEdgeButton.setVisible(true);
+        EdgeOneNameTextField.setDisable(true);
+        EdgeOneNameTextField.setText("");
+        EdgeTwoNameTextField.setDisable(true);
+        EdgeTwoNameTextField.setText("");
+        EdgeWeightTextField.setDisable(true);
+        AddEdgeButton.setVisible(true);
+        AddEdgeButton.setDisable(true);
+
+    }
+
+    // Button controllers
+
+    public void handleResetEdgeInputButtonMousceClicked(){
+        System.out.println("handleResetEdgeInputButtonMousceClicked() worked!");
+
+        CreateEdgeButton.setDisable(false);
+        CreateEdgeButton.setVisible(true);
+
+        EdgeOneNameTextField.setText("");
+        EdgeOneNameTextField.setDisable(true);
+
+        EdgeTwoNameTextField.setText("");
+        EdgeTwoNameTextField.setDisable(true);
+
+        EdgeWeightTextField.setText("");
+        EdgeWeightTextField.setDisable(true);
+
+        AddEdgeButton.setVisible(true);
+        AddEdgeButton.setDisable(true);
+    }
+
+    public void handleAddEdgeButtonClick(){
+        System.out.println("handleAddEdgeButtonClick() worked!");
+
+
+        if(!NodeNameTextField.getText().equals("")) {
+            System.out.println("Edge " + EdgeOneNameTextField.getText() + " to " + EdgeTwoNameTextField.getText() + " with weight " + EdgeWeightTextField + " added!");
+
+            String EdgeOneName = EdgeOneNameTextField.getText();
+            String EdgeTwoName = EdgeTwoNameTextField.getText();
+            String edgeWeight = EdgeWeightTextField.getText();
+            WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+
+            graph.Edges.add(edge);
+
+            graph.edges++;
+        } else {
+            System.out.println("How did you fool my \"Add edge\" logic!?");
+        }
+
+        EdgeOneNameTextField.setText("");
+        EdgeTwoNameTextField.setDisable(true);
+
+        EdgeOneNameTextField.setText("");
+        EdgeTwoNameTextField.setDisable(true);
+
+        AddEdgeButton.setDisable(true);
+        CreateEdgeButton.setDisable(false);
+    }
+
+    public void handleEnterEdgeWeightOnKeyTyped(){
+        System.out.println("handleEnterEdgeWeightOnKeyTyped() worked!");
+
+        String EdgeOneName = EdgeOneNameTextField.getText();
+        String EdgeTwoName = EdgeTwoNameTextField.getText();
+        String edgeWeight = EdgeWeightTextField.getText();
+        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+
+        WeightedGraph.Vertex VertexOne = new WeightedGraph.Vertex(-1, EdgeOneName);
+        WeightedGraph.Vertex VertexTwo = new WeightedGraph.Vertex(-1, EdgeTwoName);
+
+        if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
+                && graph.Vertices.contains(VertexOne) && graph.Vertices.contains(VertexTwo)
+                && isIntegerString(edgeWeight) == true && Long.valueOf(edgeWeight) > 0
+                && graph.Edges.contains(edge) == false){
+            AddEdgeButton.setDisable(false);
+        } else {
+            AddEdgeButton.setDisable(true);
+        }
+    }
+
+    public void handleEnterEdgeOneNameOnKeyTyped(){
+        System.out.println("handleEnterEdgeOneNameOnKeyTyped() worked!");
+
+        String EdgeOneName = EdgeOneNameTextField.getText();
+        String EdgeTwoName = EdgeTwoNameTextField.getText();
+        String edgeWeight = EdgeWeightTextField.getText();
+        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+
+        WeightedGraph.Vertex VertexOne = new WeightedGraph.Vertex(-1, EdgeOneName);
+        WeightedGraph.Vertex VertexTwo = new WeightedGraph.Vertex(-1, EdgeTwoName);
+
+        if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
+                && graph.Vertices.contains(VertexOne) && graph.Vertices.contains(VertexTwo)
+                && isIntegerString(edgeWeight) == true && Long.valueOf(edgeWeight) > 0
+                && graph.Edges.contains(edge) == false){
+            AddEdgeButton.setDisable(false);
+        } else {
+            AddEdgeButton.setDisable(true);
+        }
+    }
+
+    public void handleEnterEdgeTwoNameOnKeyTyped(){
+        System.out.println("handleEnterEdgeTwoNameOnKeyTyped() worked!");
+
+        String EdgeOneName = EdgeOneNameTextField.getText();
+        String EdgeTwoName = EdgeTwoNameTextField.getText();
+        String edgeWeight = EdgeWeightTextField.getText();
+        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+
+        WeightedGraph.Vertex VertexOne = new WeightedGraph.Vertex(-1, EdgeOneName);
+        WeightedGraph.Vertex VertexTwo = new WeightedGraph.Vertex(-1, EdgeTwoName);
+
+        if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
+                && graph.Vertices.contains(VertexOne) && graph.Vertices.contains(VertexTwo)
+                && isIntegerString(edgeWeight) == true && Long.valueOf(edgeWeight) > 0
+                && graph.Edges.contains(edge) == false){
+            AddEdgeButton.setDisable(false);
+        } else {
+            AddEdgeButton.setDisable(true);
+        }
+    }
+
+    public void handleCreateEdgeButtonClick(){
+        System.out.println("Create edge button clicked!");
+
+        EdgeOneNameTextField.setText("");
+        EdgeOneNameTextField.setDisable(false);
+
+        EdgeTwoNameTextField.setText("");
+        EdgeTwoNameTextField.setDisable(false);
+
+        EdgeWeightTextField.setText("");
+        EdgeWeightTextField.setDisable(false);
+
+        CreateEdgeButton.setDisable(true);
     }
 
     public void handleResetAllMouseClicked(){
-        System.out.println("Reset all mouse clicked!");
+        System.out.println("handleResetAllMouseClicked() worked!");
 
         CreateNodeButton.setDisable(false);
         CreateNodeButton.setVisible(true);
@@ -43,130 +188,48 @@ public class Controller implements Initializable {
         NodeNameTextField.setDisable(true);
         NodeNameTextField.setText("");
 
-        NodeWeightTextField.setDisable(true);
-        NodeWeightTextField.setText("");
-
         AddNodeButton.setVisible(true);
         AddNodeButton.setDisable(true);
     }
 
     public void handleCreateNodeButtonClick(){
-        System.out.println("Create node button clicked!");
+        System.out.println("handleCreateNodeButtonClick() worked!");
+
         NodeNameTextField.setDisable(false);
         NodeNameTextField.setText("");
 
-        NodeWeightTextField.setDisable(false);
-        NodeWeightTextField.setText("");
-
         CreateNodeButton.setDisable(true);
-        /*if(button.getText() == "Button clicked"){
-            button.setText("OK");
-        } else {
-            button.setText("Button clicked");
-        }
-
-        //button.setVisible(false);*/
-
-        //Button button = new Button("Hello bitch");
     }
 
     public void handleEnterNodeNameOnKeyTyped(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println("On key typed worked!");
+        System.out.println("handleEnterNodeNameOnKeyTyped() worked!");
 
-        if(NodeName.length() > 0 && nodeWeight.length() > 0 && isIntegerString(nodeWeight) == true){
+        String NodeName = NodeNameTextField.getText();
+        WeightedGraph.Vertex vertex = new WeightedGraph.Vertex(-1, NodeName);
+
+        if(NodeName.length() > 0 && graph.Vertices.contains(vertex) == false){
             AddNodeButton.setDisable(false);
         } else {
             AddNodeButton.setDisable(true);
-        }
-    }
-
-    public void handleEnterNodeWeightOnKeyTyped(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println("On key typed worked!");
-
-        if(NodeName.length() > 0 && nodeWeight.length() > 0 && isIntegerString(nodeWeight) == true){
-            AddNodeButton.setDisable(false);
-        } else {
-            AddNodeButton.setDisable(true);
-        }
-    }
-
-    public void handleEnterNodeWeightInputChanged(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println("On Input CHanged worked!");
-
-        if(NodeName.length() > 0 && nodeWeight.length() > 0){
-            AddNodeButton.setDisable(false);
-        }
-    }
-
-    public void handleEnterNodeNameOnAction(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println("On Action worked!");
-
-        if(NodeName.length() > 0 && nodeWeight.length() > 0){
-            AddNodeButton.setDisable(false);
-        }
-    }
-
-    public void handleEnterNodeNameKeyPressed(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println(NodeName);
-
-        if(NodeName.length() > 0 && nodeWeight.length() > 0){
-            AddNodeButton.setDisable(false);
-        }
-    }
-
-    public void handleEnterNodeNameOnMouseExited(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println(NodeName);
-
-        if(NodeName.length() > 0 && nodeWeight.length() > 0){
-            AddNodeButton.setDisable(false);
-        }
-    }
-
-    public void handleEnterNodeWeightOnMouseExited(){
-        String NodeName = NodeNameTextField.getText();
-        String nodeWeight = NodeWeightTextField.getText();
-        System.out.println(nodeWeight);
-
-        if(NodeName.length() > 0 && nodeWeight.length() > 0){
-            AddNodeButton.setDisable(false);
-        }
-    }
-
-    public void handleEnterNodeNameOnTouchPressed(){
-        if(NodeNameTextField.getText().equals("")){
-
-        } else {
-            System.out.println(NodeNameTextField.getText());
         }
     }
 
     public void handleAddNodeButtonClick(){
-        System.out.println("Add node clicked!");
-
+        System.out.println("handleAddNodeButtonClick() worked!");
 
         if(!NodeNameTextField.getText().equals("")) {
-            System.out.println("Node " + NodeNameTextField.getText() + " with Weight " + NodeWeightTextField.getText() + " added!");
+            System.out.println("Node " + NodeNameTextField.getText() + " added!");
+
+            WeightedGraph.Vertex vertex = new WeightedGraph.Vertex(graph.vertices, NodeNameTextField.getText());
+            graph.Vertices.add(vertex);
+
+            graph.vertices++;
         } else {
             System.out.println("How did you fool my \"Add node\" logic!?");
         }
 
         NodeNameTextField.setText("");
         NodeNameTextField.setDisable(true);
-
-        NodeWeightTextField.setText("");
-        NodeWeightTextField.setDisable(true);
 
         AddNodeButton.setDisable(true);
         CreateNodeButton.setDisable(false);
