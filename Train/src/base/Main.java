@@ -6,8 +6,12 @@ import Algorithms.Graphs.PrimMST_AdjacencyMatrix;
 
 public class Main{
 
+    public static boolean isPositiveNumeric(String a){
+        return a.matches("\\d+");
+    }
+
     public static void main(String[] args) throws Exception {
-        KruskalMST Kruskal = new KruskalMST();
+        /*KruskalMST Kruskal = new KruskalMST();
         Kruskal.drive();
 
         System.out.println();
@@ -23,8 +27,9 @@ public class Main{
         PrimListBinaryHeap.drive();
 
         System.out.println();
-        System.out.println();
+        System.out.println();*/
 
-
+        String a="aaa";
+        System.out.println(isPositiveNumeric((a)));
     }
 }

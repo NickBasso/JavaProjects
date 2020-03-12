@@ -16,5 +16,7 @@
       <Button fx:id="AddEdgeButton" layoutX="410.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleAddEdgeButtonClick" prefHeight="25.0" prefWidth="68.0" text="Add edge" />
       <Button fx:id="ResetEdgeInputButton" layoutX="482.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#handleResetEdgeInputButtonMousceClicked" prefHeight="25.0" prefWidth="109.0" text="Reset edge input" />
       <TextField fx:id="EdgeWeightTextField" layoutX="276.0" layoutY="139.0" onKeyTyped="#handleEnterEdgeWeightOnKeyTyped" prefHeight="25.0" prefWidth="115.0" promptText="Enter edge weight" />
+      <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" text="Calculate minimal distances" textAlignment="CENTER" />
+      <Button layoutX="260.0" layoutY="230.0" mnemonicParsing="false" text="Find graph centers" />
    </children>
 </Pane>

@@ -75,27 +75,25 @@ public class Controller implements Initializable {
     public void handleAddEdgeButtonClick(){
         System.out.println("handleAddEdgeButtonClick() worked!");
 
+        System.out.println("Edge " + EdgeOneNameTextField.getText() + " to " + EdgeTwoNameTextField.getText() + " with weight " + EdgeWeightTextField + " added!");
 
-        if(!NodeNameTextField.getText().equals("")) {
-            System.out.println("Edge " + EdgeOneNameTextField.getText() + " to " + EdgeTwoNameTextField.getText() + " with weight " + EdgeWeightTextField + " added!");
+        String EdgeOneName = EdgeOneNameTextField.getText();
+        String EdgeTwoName = EdgeTwoNameTextField.getText();
+        String edgeWeight = EdgeWeightTextField.getText();
+        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
 
-            String EdgeOneName = EdgeOneNameTextField.getText();
-            String EdgeTwoName = EdgeTwoNameTextField.getText();
-            String edgeWeight = EdgeWeightTextField.getText();
-            WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+        graph.Edges.add(edge);
 
-            graph.Edges.add(edge);
-
-            graph.edges++;
-        } else {
-            System.out.println("How did you fool my \"Add edge\" logic!?");
-        }
+        graph.edges++;
 
         EdgeOneNameTextField.setText("");
+        EdgeOneNameTextField.setDisable(true);
+
+        EdgeTwoNameTextField.setText("");
         EdgeTwoNameTextField.setDisable(true);
 
-        EdgeOneNameTextField.setText("");
-        EdgeTwoNameTextField.setDisable(true);
+        EdgeWeightTextField.setText("");
+        EdgeWeightTextField.setDisable(true);
 
         AddEdgeButton.setDisable(true);
         CreateEdgeButton.setDisable(false);
@@ -104,19 +102,20 @@ public class Controller implements Initializable {
     public void handleEnterEdgeWeightOnKeyTyped(){
         System.out.println("handleEnterEdgeWeightOnKeyTyped() worked!");
 
-        String EdgeOneName = EdgeOneNameTextField.getText();
-        String EdgeTwoName = EdgeTwoNameTextField.getText();
-        String edgeWeight = EdgeWeightTextField.getText();
-        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+        if(isPositiveNumeric(EdgeWeightTextField.getText()) == true){
+            String EdgeOneName = EdgeOneNameTextField.getText();
+            String EdgeTwoName = EdgeTwoNameTextField.getText();
+            String edgeWeight = EdgeWeightTextField.getText();
+            WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
 
-        WeightedGraph.Vertex VertexOne = new WeightedGraph.Vertex(-1, EdgeOneName);
-        WeightedGraph.Vertex VertexTwo = new WeightedGraph.Vertex(-1, EdgeTwoName);
-
-        if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
-                && graph.Vertices.contains(VertexOne) && graph.Vertices.contains(VertexTwo)
-                && isIntegerString(edgeWeight) == true && Long.valueOf(edgeWeight) > 0
-                && graph.Edges.contains(edge) == false){
-            AddEdgeButton.setDisable(false);
+            if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
+                    && !EdgeOneName.equals(EdgeTwoName) && WeightedGraph.VerticesContainsName(EdgeOneName)
+                    && WeightedGraph.VerticesContainsName(EdgeTwoName)
+                    && graph.Edges.contains(edge) == false){
+                AddEdgeButton.setDisable(false);
+            } else {
+                AddEdgeButton.setDisable(true);
+            }
         } else {
             AddEdgeButton.setDisable(true);
         }
@@ -125,19 +124,20 @@ public class Controller implements Initializable {
     public void handleEnterEdgeOneNameOnKeyTyped(){
         System.out.println("handleEnterEdgeOneNameOnKeyTyped() worked!");
 
-        String EdgeOneName = EdgeOneNameTextField.getText();
-        String EdgeTwoName = EdgeTwoNameTextField.getText();
-        String edgeWeight = EdgeWeightTextField.getText();
-        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+        if(isPositiveNumeric(EdgeWeightTextField.getText()) == true){
+            String EdgeOneName = EdgeOneNameTextField.getText();
+            String EdgeTwoName = EdgeTwoNameTextField.getText();
+            String edgeWeight = EdgeWeightTextField.getText();
+            WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
 
-        WeightedGraph.Vertex VertexOne = new WeightedGraph.Vertex(-1, EdgeOneName);
-        WeightedGraph.Vertex VertexTwo = new WeightedGraph.Vertex(-1, EdgeTwoName);
-
-        if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
-                && graph.Vertices.contains(VertexOne) && graph.Vertices.contains(VertexTwo)
-                && isIntegerString(edgeWeight) == true && Long.valueOf(edgeWeight) > 0
-                && graph.Edges.contains(edge) == false){
-            AddEdgeButton.setDisable(false);
+            if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
+                    && !EdgeOneName.equals(EdgeTwoName) && WeightedGraph.VerticesContainsName(EdgeOneName)
+                    && WeightedGraph.VerticesContainsName(EdgeTwoName)
+                    && graph.Edges.contains(edge) == false){
+                AddEdgeButton.setDisable(false);
+            } else {
+                AddEdgeButton.setDisable(true);
+            }
         } else {
             AddEdgeButton.setDisable(true);
         }
@@ -146,19 +146,20 @@ public class Controller implements Initializable {
     public void handleEnterEdgeTwoNameOnKeyTyped(){
         System.out.println("handleEnterEdgeTwoNameOnKeyTyped() worked!");
 
-        String EdgeOneName = EdgeOneNameTextField.getText();
-        String EdgeTwoName = EdgeTwoNameTextField.getText();
-        String edgeWeight = EdgeWeightTextField.getText();
-        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+        if(isPositiveNumeric(EdgeWeightTextField.getText()) == true){
+            String EdgeOneName = EdgeOneNameTextField.getText();
+            String EdgeTwoName = EdgeTwoNameTextField.getText();
+            String edgeWeight = EdgeWeightTextField.getText();
+            WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
 
-        WeightedGraph.Vertex VertexOne = new WeightedGraph.Vertex(-1, EdgeOneName);
-        WeightedGraph.Vertex VertexTwo = new WeightedGraph.Vertex(-1, EdgeTwoName);
-
-        if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
-                && graph.Vertices.contains(VertexOne) && graph.Vertices.contains(VertexTwo)
-                && isIntegerString(edgeWeight) == true && Long.valueOf(edgeWeight) > 0
-                && graph.Edges.contains(edge) == false){
-            AddEdgeButton.setDisable(false);
+            if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
+                    && !EdgeOneName.equals(EdgeTwoName) && WeightedGraph.VerticesContainsName(EdgeOneName)
+                    && WeightedGraph.VerticesContainsName(EdgeTwoName)
+                    && graph.Edges.contains(edge) == false){
+                AddEdgeButton.setDisable(false);
+            } else {
+                AddEdgeButton.setDisable(true);
+            }
         } else {
             AddEdgeButton.setDisable(true);
         }
@@ -236,6 +237,10 @@ public class Controller implements Initializable {
     }
 
     ///////////////////////// Non-controller methods /////////////////////////
+
+    public static boolean isPositiveNumeric(String a){
+        return a.matches("\\d+");
+    }
 
     public static boolean isIntegerString(String strNum) {
         if (strNum == null) {
