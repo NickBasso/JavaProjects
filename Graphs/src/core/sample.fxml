@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.Controller">
+<Pane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.Controller">
 
    <children>
       <Button fx:id="CreateNodeButton" layoutX="31.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleCreateNodeButtonClick" text="Create node" />
@@ -14,9 +14,8 @@
       <TextField fx:id="EdgeOneNameTextField" layoutX="31.0" layoutY="139.0" onKeyTyped="#handleEnterEdgeOneNameOnKeyTyped" prefHeight="25.0" prefWidth="100.0" promptText="Enter node one" />
       <TextField fx:id="EdgeTwoNameTextField" layoutX="143.0" layoutY="139.0" onKeyTyped="#handleEnterEdgeTwoNameOnKeyTyped" prefHeight="25.0" prefWidth="100.0" promptText="Enter node two" />
       <Button fx:id="AddEdgeButton" layoutX="410.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleAddEdgeButtonClick" prefHeight="25.0" prefWidth="68.0" text="Add edge" />
-      <Button fx:id="ResetEdgeInputButton" layoutX="482.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#handleResetEdgeInputButtonMousceClicked" prefHeight="25.0" prefWidth="109.0" text="Reset edge input" />
+      <Button fx:id="ResetEdgeInputButton" layoutX="482.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#handleResetEdgeInputButtonMouseClicked" prefHeight="25.0" prefWidth="109.0" text="Reset edge input" />
       <TextField fx:id="EdgeWeightTextField" layoutX="276.0" layoutY="139.0" onKeyTyped="#handleEnterEdgeWeightOnKeyTyped" prefHeight="25.0" prefWidth="115.0" promptText="Enter edge weight" />
-      <Button layoutX="230.0" layoutY="190.0" mnemonicParsing="false" text="Calculate minimal distances" textAlignment="CENTER" />
-      <Button layoutX="260.0" layoutY="230.0" mnemonicParsing="false" text="Find graph centers" />
+      <Button fx:id="FindGraphCentersButton" layoutX="252.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleFindGraphCentersButtonOnAction" text="Find graph Centers" textAlignment="CENTER" />
    </children>
 </Pane>

@@ -25,12 +25,16 @@ public class Controller implements Initializable {
     public TextField EdgeTwoNameTextField;
     public TextField EdgeWeightTextField;
 
+    // Check
+    public static boolean isFindGraphCenterClicked = false;
+
     // Initialize graph
     WeightedGraph graph = new WeightedGraph();
 
     // Start application initial settings
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("initialize(URL url, ResourceBundle resourceBundle) worked!");
 
         // create node init
         CreateNodeButton.setVisible(true);
@@ -53,7 +57,14 @@ public class Controller implements Initializable {
 
     // Button controllers
 
-    public void handleResetEdgeInputButtonMousceClicked(){
+    public void handleFindGraphCentersButtonOnAction(){
+        System.out.println("handleFindGraphCentersButtonOnAction() worked!");
+        isFindGraphCenterClicked = true;
+
+        WeightedGraph.drive();
+    }
+
+    public void handleResetEdgeInputButtonMouseClicked(){
         System.out.println("handleResetEdgeInputButtonMousceClicked() worked!");
 
         CreateEdgeButton.setDisable(false);
@@ -75,12 +86,12 @@ public class Controller implements Initializable {
     public void handleAddEdgeButtonClick(){
         System.out.println("handleAddEdgeButtonClick() worked!");
 
-        System.out.println("Edge " + EdgeOneNameTextField.getText() + " to " + EdgeTwoNameTextField.getText() + " with weight " + EdgeWeightTextField + " added!");
-
         String EdgeOneName = EdgeOneNameTextField.getText();
         String EdgeTwoName = EdgeTwoNameTextField.getText();
-        String edgeWeight = EdgeWeightTextField.getText();
-        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(edgeWeight));
+        String EdgeWeight = EdgeWeightTextField.getText();
+        WeightedGraph.Edge edge = new WeightedGraph.Edge(EdgeOneName, EdgeTwoName, Long.valueOf(EdgeWeight));
+
+        System.out.println("Edge " + EdgeOneName + " to " + EdgeTwoName + " with weight " + EdgeWeight+ " added!");
 
         graph.Edges.add(edge);
 
@@ -111,7 +122,7 @@ public class Controller implements Initializable {
             if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
                     && !EdgeOneName.equals(EdgeTwoName) && WeightedGraph.VerticesContainsName(EdgeOneName)
                     && WeightedGraph.VerticesContainsName(EdgeTwoName)
-                    && graph.Edges.contains(edge) == false){
+                    && graph.EdgeExists(EdgeOneName, EdgeTwoName) == false){
                 AddEdgeButton.setDisable(false);
             } else {
                 AddEdgeButton.setDisable(true);
@@ -133,7 +144,7 @@ public class Controller implements Initializable {
             if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
                     && !EdgeOneName.equals(EdgeTwoName) && WeightedGraph.VerticesContainsName(EdgeOneName)
                     && WeightedGraph.VerticesContainsName(EdgeTwoName)
-                    && graph.Edges.contains(edge) == false){
+                    && graph.EdgeExists(EdgeOneName, EdgeTwoName) == false){
                 AddEdgeButton.setDisable(false);
             } else {
                 AddEdgeButton.setDisable(true);
@@ -155,7 +166,7 @@ public class Controller implements Initializable {
             if(EdgeOneName.length() > 0 && EdgeTwoName.length() > 0
                     && !EdgeOneName.equals(EdgeTwoName) && WeightedGraph.VerticesContainsName(EdgeOneName)
                     && WeightedGraph.VerticesContainsName(EdgeTwoName)
-                    && graph.Edges.contains(edge) == false){
+                    && graph.EdgeExists(EdgeOneName, EdgeTwoName) == false){
                 AddEdgeButton.setDisable(false);
             } else {
                 AddEdgeButton.setDisable(true);
@@ -166,7 +177,7 @@ public class Controller implements Initializable {
     }
 
     public void handleCreateEdgeButtonClick(){
-        System.out.println("Create edge button clicked!");
+        System.out.println("Create edge button worked!");
 
         EdgeOneNameTextField.setText("");
         EdgeOneNameTextField.setDisable(false);
@@ -206,9 +217,9 @@ public class Controller implements Initializable {
         System.out.println("handleEnterNodeNameOnKeyTyped() worked!");
 
         String NodeName = NodeNameTextField.getText();
-        WeightedGraph.Vertex vertex = new WeightedGraph.Vertex(-1, NodeName);
+        //WeightedGraph.Vertex vertex = new WeightedGraph.Vertex(-1, NodeName);
 
-        if(NodeName.length() > 0 && graph.Vertices.contains(vertex) == false){
+        if(NodeName.length() > 0 && graph.VerticesContainsName(NodeName) == false){
             AddNodeButton.setDisable(false);
         } else {
             AddNodeButton.setDisable(true);
@@ -221,9 +232,8 @@ public class Controller implements Initializable {
         if(!NodeNameTextField.getText().equals("")) {
             System.out.println("Node " + NodeNameTextField.getText() + " added!");
 
-            WeightedGraph.Vertex vertex = new WeightedGraph.Vertex(graph.vertices, NodeNameTextField.getText());
+            WeightedGraph.Vertex vertex = new WeightedGraph.Vertex(graph.vertices + 1, NodeNameTextField.getText());
             graph.Vertices.add(vertex);
-
             graph.vertices++;
         } else {
             System.out.println("How did you fool my \"Add node\" logic!?");

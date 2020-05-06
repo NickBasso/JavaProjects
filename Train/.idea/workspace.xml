@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c40911b4-a601-43a3-b554-9bcad84948ee" name="Default Changelist" comment="">
+    <list default="true" id="c40911b4-a601-43a3-b554-9bcad84948ee" name="Default Changelist" comment="GitUPD">
       <change beforePath="$PROJECT_DIR$/../Graphs/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/info.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/WeightedGraph$Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/WeightedGraph$Edge.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/WeightedGraph$Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/WeightedGraph$Vertex.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/WeightedGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/WeightedGraph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/out/production/Graphs/core/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/src/core/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/src/core/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Graphs/src/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/src/core/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/src/core/WeightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/src/core/WeightedGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Graphs/src/core/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Graphs/src/core/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Train/base/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Train/base/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +56,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582461685944</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="GitUPD">
+      <created>1584039668063</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584039668063</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

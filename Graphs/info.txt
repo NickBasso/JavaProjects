@@ -1,2 +1,10 @@
 TODO: Calculate minimal distance between all vertices
 TODO: find graph centers
+
+Info URLs:
+
+    Centers of graphs + minimal distance:
+        https://codeforces.com/blog/entry/17974?locale=en
+
+    Center of graph (wiki):
+        https://en.wikipedia.org/wiki/Graph_center
