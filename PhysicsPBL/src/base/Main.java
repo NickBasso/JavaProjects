@@ -50,23 +50,14 @@ public class Main extends Application {
                                             Label OscillationFrequencyLabel, double W,
                                             Label AttenuationCoefficientLabel, double k
                                        ){
-        InitialVoltageLabel.setText("Initial Voltage: " + V + " (Volt)");
-        CapacityLabel.setText("Capacity: " + C + " (Farad)");
-        InductanceLabel.setText("Inductance: " + L + " (Henry)");
-        ResistorResistanceLabel.setText("Resistor resistance: " + R + " (Ohm)");
-        TotalResistanceLabel.setText("Total resistance: " + R + " (Ohm)");
-        OscillationPeriodLabel.setText("T: " + T + " (s)");
-        OscillationFrequencyLabel.setText("W: " + W + " (Hz)");
-        AttenuationCoefficientLabel.setText("λ: " + k);
-
-        InitialVoltageLabel.setVisible(true);
-        CapacityLabel.setVisible(true);
-        InductanceLabel.setVisible(true);
-        ResistorResistanceLabel.setVisible(true);
-        TotalResistanceLabel.setVisible(true);
-        OscillationPeriodLabel.setVisible(true);
-        OscillationFrequencyLabel.setVisible(true);
-        AttenuationCoefficientLabel.setVisible(true);
+        InitialVoltageLabel.setText(V + " (Volt)");
+        CapacityLabel.setText(C + " (Farad)");
+        InductanceLabel.setText(L + " (Henry)");
+        ResistorResistanceLabel.setText(R + " (Ohm)");
+        TotalResistanceLabel.setText(R + " (Ohm)");
+        OscillationPeriodLabel.setText(T + " (s)");
+        OscillationFrequencyLabel.setText(W + " (Hz)");
+        AttenuationCoefficientLabel.setText("" + k);
     }
 
     // displays changing variables from calculations on each step
@@ -129,7 +120,7 @@ public class Main extends Application {
         lineChart.setLayoutX(100);
         lineChart.setLayoutY(500);
         lineChart.setPrefWidth(1000);
-        lineChart.setTitle("charge(time)");
+        lineChart.setTitle("Charge (Time)");
         lineChart.setCreateSymbols(false);
         lineChart.getStyleClass().add("chart-series-line");
         lineChart.getStyleClass().add("chart-set-font");

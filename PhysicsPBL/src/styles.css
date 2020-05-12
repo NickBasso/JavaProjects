@@ -2,7 +2,6 @@
     here are CSS properties which were applied in program
 */
 
-
 .chart-series-line {
     -fx-stroke-width: 1px;
 }
@@ -10,6 +9,7 @@
 .chart-set-font {
     -fx-font-size: 17px;
     -fx-font-weight: bold;
+    -fx-font-family: "Courier New";
 }
 
 .fx-font-column1 {

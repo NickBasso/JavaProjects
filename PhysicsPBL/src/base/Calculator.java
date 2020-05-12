@@ -31,7 +31,7 @@ public class Calculator {
     public static double e = 2.7182818284590452353602874713527;         // Euler's number
 
     // this if for the first line of calculation's table
-    public String[] variables = new String[]{"№", "t", "q", "A", "Vc"};
+    public String[] variables = new String[]{"№", "t (s)", "q (C)", "A (m)", "Vc (V)"};
     // each step changing variable data storage
     public String[][] data;
     // amount of steps performed during calculations on whole time range
@@ -49,6 +49,8 @@ public class Calculator {
         this.tD = timeDelta;
         this.B = B;
 
+
+        System.out.println(variables.length);
         // initialize data table to be represented after the calculations
         data = new String[100100][variables.length];
         int i = 0;

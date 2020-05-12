@@ -18,7 +18,7 @@ public class Controller implements Initializable {
 
     public Button ResetAllButton;
     public Button CalculateChargeButton;
-    public Button showLiveGraphButton;
+    public Button ShowChartButton;
 
     public TextField VoltageTextField;
     public TextField CapacityTextField;
@@ -27,6 +27,15 @@ public class Controller implements Initializable {
     public TextField StartingPhaseTextField;
     public TextField TimeRangeTextField;
     public TextField TimeDeltaTextField;
+
+    public Label InitialVoltageTextLabel;
+    public Label CapacityTextLabel;
+    public Label InductanceTextLabel;
+    public Label OscillationPeriodTextLabel;
+    public Label ResistorResistanceTextLabel;
+    public Label TotalResistanceTextLabel;
+    public Label OscillationFrequencyTextLabel;
+    public Label AttenuationCoefficientTextLabel;
 
     public Label InitialVoltageLabel;
     public Label CapacityLabel;
@@ -62,13 +71,22 @@ public class Controller implements Initializable {
         TimeRangeMenuButton.setText("seconds");
         TimeDeltaMenuButton.setText("seconds");
 
-        VoltageTextField.setText("150");
+        VoltageTextField.setText("1500");
         CapacityTextField.setText("0.00000004");
         InductanceTextField.setText("0.68");
-        ResistorTextField.setText("0");
+        ResistorTextField.setText("50");
         StartingPhaseTextField.setText("0.26179938779");
-        TimeDeltaTextField.setText("0.0000001");
+        TimeDeltaTextField.setText("0.000001");
         TimeRangeTextField.setText("0.002");
+
+        InitialVoltageTextLabel.setVisible(false);
+        CapacityTextLabel.setVisible(false);
+        InductanceTextLabel.setVisible(false);
+        ResistorResistanceTextLabel.setVisible(false);
+        TotalResistanceTextLabel.setVisible(false);
+        OscillationPeriodTextLabel.setVisible(false);
+        OscillationFrequencyTextLabel.setVisible(false);
+        AttenuationCoefficientTextLabel.setVisible(false);
 
         InitialVoltageLabel.setVisible(false);
         CapacityLabel.setVisible(false);
@@ -87,10 +105,13 @@ public class Controller implements Initializable {
         initializeData();
         Main.removeTable();
         Main.removeChart();
+        ShowChartButton.setDisable(false);
+        CalculateChargeButton.setDisable(false);
     }
 
                              // ---> Calculate charge handlers <---
     public void handleCalculateChargeButton(){
+        CalculateChargeButton.setDisable(true);
 
         double V = convertVoltageToSI();
         double C = convertCapacityToSI();
@@ -114,9 +135,29 @@ public class Controller implements Initializable {
                                 AttenuationCoefficientLabel, calculator.getAttenuationCoefficient() );
 
         Main.displayResultsTable(calculator.data);
+
+        InitialVoltageTextLabel.setVisible(true);
+        CapacityTextLabel.setVisible(true);
+        InductanceTextLabel.setVisible(true);
+        ResistorResistanceTextLabel.setVisible(true);
+        TotalResistanceTextLabel.setVisible(true);
+        OscillationPeriodTextLabel.setVisible(true);
+        OscillationFrequencyTextLabel.setVisible(true);
+        AttenuationCoefficientTextLabel.setVisible(true);
+
+        InitialVoltageLabel.setVisible(true);
+        CapacityLabel.setVisible(true);
+        InductanceLabel.setVisible(true);
+        ResistorResistanceLabel.setVisible(true);
+        TotalResistanceLabel.setVisible(true);
+        OscillationPeriodLabel.setVisible(true);
+        OscillationFrequencyLabel.setVisible(true);
+        AttenuationCoefficientLabel.setVisible(true);
     }
     public void handleShowChartButtonOnAction(){
         Main.displayChart(calculator.data, calculator.iterations);
+        //CalculateChargeButton.setDisable(true);
+        ShowChartButton.setDisable(true);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
