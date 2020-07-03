@@ -99,6 +99,13 @@ public class Controller implements Initializable {
         OscillationPeriodLabel.setVisible(false);
         OscillationFrequencyLabel.setVisible(false);
         AttenuationCoefficientLabel.setVisible(false);
+
+        DampedOscillationsRadioButton.setSelected(true);
+        ShowChartButton.setDisable(false);
+        CalculateChargeButton.setDisable(false);
+        FreeOscillationsRadioButton.setSelected(false);
+        FreeOscillationsRadioButton.setDisable(false);
+        DampedOscillationsRadioButton.setDisable(false);
     }
 
                              // ---> variable initializer <---
@@ -108,25 +115,21 @@ public class Controller implements Initializable {
         initializeData();
         Main.removeTable();
         Main.removeChart();
-        ShowChartButton.setDisable(false);
-        CalculateChargeButton.setDisable(false);
-        FreeOscillationsRadioButton.setSelected(false);
-        DampedOscillationsRadioButton.setSelected(false);
-        FreeOscillationsRadioButton.setDisable(false);
-        DampedOscillationsRadioButton.setDisable(false);
     }
 
 
                              // ---> type of oscillations handler <---
 
     public void handleFreeOscillationsRadioButton(){
-        //FreeOscillationsRadioButton.setSelected(true);
         DampedOscillationsRadioButton.setSelected(false);
+        ResistorTextField.setDisable(true);
+        ResistorMenuButton.setDisable(true);
     }
 
     public void handleDampedOscillationsRadioButton(){
         FreeOscillationsRadioButton.setSelected(false);
-        //DampedOscillationsRadioButton.setSelected(true);
+        ResistorTextField.setDisable(false);
+        ResistorMenuButton.setDisable(false);
     }
 
                              // ---> Calculate charge handlers <---
@@ -134,7 +137,6 @@ public class Controller implements Initializable {
         CalculateChargeButton.setDisable(true);
         FreeOscillationsRadioButton.setDisable(true);
         DampedOscillationsRadioButton.setDisable(true);
-        //FreeOscillationsRadioButton.isSe
 
         double V = convertVoltageToSI();
         double C = convertCapacityToSI();
