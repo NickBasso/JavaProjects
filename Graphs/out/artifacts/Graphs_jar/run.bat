@@ -1,1 +1,1 @@
-java --module-path D:\!Works\Java\Tools\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml -jar Graphs.jar
+java --module-path "C:\Program Files\Java\javafx-sdk-11.0.2\lib" --add-modules javafx.controls,javafx.fxml -jar Graphs.jar
