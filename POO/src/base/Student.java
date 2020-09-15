@@ -2,13 +2,13 @@ package base;
 
 public class Student {
     private int age;
-    private int mark;
+    private float averageMark;
     private String name;
     private String surname;
 
-    public Student(int age, int mark, String name, String surname){
+    public Student(int age, float averageMark, String name, String surname){
         this.age = age;
-        this.mark = mark;
+        this.averageMark = averageMark;
         this.name = name;
         this.surname = surname;
     }
@@ -23,26 +23,26 @@ public class Student {
     public void setAge(int age){
         this.age = age;
     }
-    public void setMark(int mark){
-        this.mark = mark;
+    public void setaverageMark(float averageMark){
+        this.averageMark = averageMark;
     }
 
     // getters
-    public String getName(String name){
+    public String getName(){
         return this.name;
     }
-    public String getSurname(String surname){
+    public String getSurname(){
         return this.surname;
     }
-    public int getAge(int age){
+    public int getAge(){
         return this.age;
     }
-    public int getMark(int mark){
-        return this.mark;
+    public float getAverageMark(){
+        return this.averageMark;
     }
 
     @Override
     public String toString(){
-        return this.surname + " " + this.name + " " + this.age + " - mark: " + this.mark;
+        return this.surname + " " + this.name + " " + this.age + " - averageMark: " + this.averageMark;
     }
 }

@@ -24,6 +24,8 @@ public class FormattedStringArrayList{
         this.strings = new ArrayList<>();
         this.scan = new Scanner(System.in);
         this.filePath = filePath;
+
+        this.getFormattedStrings();
     }
 
     public void getFormattedStrings(){
